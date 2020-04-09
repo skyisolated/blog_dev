@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+<!-- 移动端访问时页面自适应 -->
+    <meta name="viewport" content="width=device-with, initial-scale=1.0">
+    <title>分类</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" th:href="@{/css/me.css}">
+</head>
+<body>
+<!--导航栏-->
+<div th:replace="~{_fragments::topbar(ac='types')}"></div>
+<!--中间部分-->
+    <div class="m-padded-tb-large m-container-small">
+        <div class="ui container">
+            <div class="ui segment attached top">
+                <div class="ui two column grid middle aligned">
+                    <div class="column">
+                        <h3 class="ui teal header">分类</h3>
+                    </div>
+                    <div class="column right aligned">
+                        共 <h3 class="ui orange header m-inline-block">14</h3> 个
+                    </div>
+                </div>
+            </div>
+<!--          类别-->
+            <div class="ui segment attached padded">
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+                <div class="ui labeled button m-margin-bottom-small">
+                    <a class="ui basic teal button">思考和感悟</a>
+                    <div class="ui label basic teal left pointing">23</div>
+                </div>
+
+
+
+            </div>
+<!--         博客列表   -->
+            <div class="ui segment teal padded top attached">
+                <div class="ui segment vertical m-padded-tb-big">
+                    <div class="ui grid stackable mobile reversed">
+                        <div class="eleven wide column">
+                            <h3 class="ui header">你真的理解什么是财富自由吗？</h3>
+                            <p class="m-text">客观上讲大崩坏的发生，丽塔，符华，呆鹅这些人，都是帮凶。但是有些人是蒙在鼓里，有些人是心知肚明。奥托是始作俑者。西琳是元凶，琪亚娜是被动情况下的帮凶。
+                                目前害死最多平民，造成破坏最大的，就是空之律者的觉醒。
+                            </p>
+                            <div class="ui grid">
+                                <div class="eleven wide column">
+                                    <div class="ui link list horizontal mini">
+                                        <div class="item">
+                                            <img th:src="@{/images/weChat.jpg}" alt="" class="ui image avatar">
+                                            <div class="content"><a href="#" class="header">月影残光</a></div>
+                                        </div>
+                                        <div class="item">
+                                            <i class="calendar icon"></i>2020-04-05
+                                        </div>
+                                        <div class="item">
+                                            <i class="eye icon"></i>111
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="five wide column right aligned">
+                                    <a href="#" class="ui label basic teal m-text-thin m-padded-tiny">认知升级</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="five wide column">
+                            <a href="#" target="_blank">
+                                <img th:src="@{/images/1.png}" alt="" class="ui rounded image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment attached bottom">
+                <div class="ui grid two column middle aligned">
+                    <div class="column">
+                        <a href="#" class="ui button teal basic mini">上一页</a>
+                    </div>
+                    <div class="column right aligned">
+                        <a href="#" class="ui button teal basic mini">下一页</a>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+<!--网页底部-->
+    <footer class="ui inverted segment vertical m-padded-tb-massive">
+        <div class="ui container center aligned">
+            <div class="ui grid divided inverted stackable">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img th:src="@{/images/weChat.jpg}" alt="" class="ui rounded image" style="width: 110px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-spaced m-text-thin">Blog</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">用户故事（User Story）</a>
+                        <a href="#" class="item">用户故事（User Story）</a>
+                        <a href="#" class="item">用户故事（User Story）</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-spaced m-text-thin">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email: skyisolated@qq.com</a>
+                        <a href="#" class="item">qq: 1694012933</a>
+
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-text-spaced m-text-thin">月影残光</h4>
+                    <p class="m-opacity-mini m-text-spaced m-text-thin">
+                        这是我的个人博客，会分享有关个人的兴趣爱好，希望可以给他人带来欢乐！
+                    </p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="m-opacity-mini m-text-spaced m-text-thin">
+                Copyright © 2019-2020 月影残光 练习中....
+            </p>
+        </div>
+    </footer>
+
+<!--js放在此处加载速度最快-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script>
+    $("#mb_btn").click(function () {
+        $(".m-item").toggleClass("m-mobile-hide");
+    });
+    //点击弹出图片
+    $("#pay_btn").popup({
+        popup: $("#pay_part"),
+        on: 'click',
+        position: "bottom center"
+    });
+</script>
+</body>
+</html>

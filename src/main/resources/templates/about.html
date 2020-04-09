@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+<!-- 移动端访问时页面自适应 -->
+    <meta name="viewport" content="width=device-with, initial-scale=1.0">
+    <title>关于我</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" th:href="@{/css/me.css}">
+</head>
+<body>
+<!--导航栏-->
+<div th:replace="~{_fragments::topbar(ac='about')}">
+</div>
+<!--中间部分-->
+    <div class="m-padded-tb-large m-container">
+       <div class="ui container">
+           <div class="ui grid stackable">
+               <div class="eleven wide column">
+                   <div class="ui segment" style="width: 685px">
+                       <img th:src="@{/images/weChat.jpg}" style="width: inherit" alt="" class="ui image rounded">
+                   </div>
+               </div>
+               <div class="five wide column">
+                   <div class="ui segment top attached">
+                       <h4 class="ui header">关于我</h4>
+                   </div>
+                   <div class="ui segment attached">
+                       <p>嘉神川 克罗艾（嘉神川 クロエ Kagamigawa Chloe）是5PB社出品的Galgame游戏《Memories Off 6 T-Wave》（秋之回忆6：三角波澜）中的女主角。是澄空学园三年生，担任学生会长，学生们憧憬的对象，在女学生中特别有人气。</p>
+                        <p>在下一篇章中，学姐的母亲从法国回来。很明显，11年的隔阂并非一朝一夕所能弥补的。由于种种原因，学姐从家里搬出去了志雄家，开始了第二次同居生活，虽然受到过伤害，但学姐依旧试图拉近自己与父母之间的距离，作为学姐男友的志雄也努力地用自己的方式构建起学姐与家人之间沟通的桥梁。后来在志雄的启发和鼓励下，学姐向家人表达了自己的真心，同时学姐的父母也向学姐坦露了真实的想法。最后结局，学姐向志雄告白其实自己对志雄是一见钟情，在夕阳映照之下，两人双唇合在一起，他们的心也从此合在一起，永不分离。</p>
+                   </div>
+                   <div class="ui segment attached">
+                       <a href="#" class="ui label basic orange left pointing">编程</a>
+                       <a href="#" class="ui label basic orange left pointing">唱歌</a>
+                       <a href="#" class="ui label basic orange left pointing">跳舞</a>
+                       <a href="#" class="ui label basic orange left pointing">篮球</a>
+                   </div>
+                   <div class="ui segment attached">
+                       <a href="#" class="ui label basic teal left pointing m-margin-tb-tiny">Java</a>
+                       <a href="#" class="ui label basic teal left pointing m-margin-tb-tiny">Python</a>
+                       <a href="#" class="ui label basic teal left pointing m-margin-tb-tiny">Android</a>
+                       <a href="#" class="ui label basic teal left pointing m-margin-tb-tiny">MySQL</a>
+                       <a href="#" class="ui label basic teal left pointing m-margin-tb-tiny">JavaScript</a>
+                       <a href="#" class="ui label basic teal left pointing m-margin-tb-tiny">Spring</a>
+                   </div>
+                   <div class="ui segment attached bottom">
+                       <a href="#" class="ui circular icon button"><i class="ui icon github"></i></a>
+                       <a href="#" id="wechat" class="ui circular icon button"><i class="ui icon weixin"></i></a>
+                       <a href="#" class="ui qq circular icon button" data-content="1694012933" data-position="bottom center"><i class="icon qq"></i></a>
+                   </div>
+                   <div id="wechat_part" class="ui flowing popup transition hidden">
+                       <img th:src="@{/images/weChat.jpg}" width="100" alt="" class="ui image rounded">
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+<!--网页底部-->
+    <footer class="ui inverted segment vertical m-padded-tb-massive">
+        <div class="ui container center aligned">
+            <div class="ui grid divided inverted stackable">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img th:src="@{/images/weChat.jpg}" alt="" class="ui rounded image" style="width: 110px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-spaced m-text-thin">Blog</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">用户故事（User Story）</a>
+                        <a href="#" class="item">用户故事（User Story）</a>
+                        <a href="#" class="item">用户故事（User Story）</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-spaced m-text-thin">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email: skyisolated@qq.com</a>
+                        <a href="#" class="item">qq: 1694012933</a>
+
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-text-spaced m-text-thin">月影残光</h4>
+                    <p class="m-opacity-mini m-text-spaced m-text-thin">
+                        这是我的个人博客，会分享有关个人的兴趣爱好，希望可以给他人带来欢乐！
+                    </p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="m-opacity-mini m-text-spaced m-text-thin">
+                Copyright © 2019-2020 月影残光 练习中....
+            </p>
+        </div>
+    </footer>
+
+<!--js放在此处加载速度最快-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script>
+    $("#mb_btn").click(function () {
+        $(".m-item").toggleClass("m-mobile-hide");
+    });
+    //点击弹出图片
+    $(".qq.button").popup();
+    $("#wechat").popup({
+        popup: $("#wechat_part"),
+        position: "bottom center"
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<nav class="ui inverted attached segment m-padded-tb-mini m-shadow" th:fragment="topbar(ac)">
+    <div class="ui container">
+        <div class="ui inverted menu secondary stackable">
+            <h2 class="ui teal header item">Blog</h2>
+            <a href="#" class="m-item item m-mobile-hide" th:classappend="${ac}=='home'? 'active' "><i class="home icon"></i>首页</a>
+            <a href="#" class="m-item item m-mobile-hide" th:classappend="${ac}=='types'? 'active' "><i class="idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide" th:classappend="${ac}=='tags'? 'active' "><i class="tags icon"></i>标签</a>
+            <a href="#" class="m-item item m-mobile-hide" th:classappend="${ac}=='archive'? 'active' "><i class="clone icon"></i>归档</a>
+            <a href="#" class="m-item item m-mobile-hide" th:classappend="${ac}=='about'? 'active' "><i class="info icon"></i> 关于我</a>
+            <div class="right m-item item m-mobile-hide">
+                <div class="ui input icon transparent">
+                    <input type="text" placeholder="Search...">
+                    <i class="inverted search icon link"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" id="mb_btn" class="ui icon button black m-right-top m-mobile-show">
+        <i class="icon sidebar"></i>
+    </a>
+</nav>
+
+
+</body>
+</html>
