@@ -1,6 +1,7 @@
 package com.zjy.blog.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ public class Type {
     @Id
     @GeneratedValue
     private Long id;
+    @NotBlank(message = "后端的校验，不能为空！")
     private String name;
 
 

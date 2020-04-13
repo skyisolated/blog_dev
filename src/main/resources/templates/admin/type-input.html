@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+<!-- 移动端访问时页面自适应 -->
+    <meta name="viewport" content="width=device-with, initial-scale=1.0">
+    <title>博客发布</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" th:href="@{/css/me.css}">
+    <link rel="stylesheet" th:href="@{/lib/editormd/css/editormd.min.css}">
+
+</head>
+<body>
+<!--导航栏-->
+    <div th:replace="~{/admin/_fragments::top(ac='idea')}"></div>
+    <div class="ui menu attached ">
+        <div class="ui container">
+            <div class="ui right menu pointing">
+                <a th:href="@{/admin/types/input}" class="active item teal">发布</a>
+                <a th:href="@{/admin/types}" class="item teal">列表</a>
+            </div>
+        </div>
+    </div>
+<!--中间部分-->
+    <div class="m-padded-tb-large m-container">
+        <div class="ui container">
+            <form th:action="@{/admin/types}" method="post" class="ui form" th:object="${type}">
+                <div class="field required">
+                    <div class="ui basic labeled input">
+                        <label class="ui label basic teal">分类名称</label>
+                        <input type="hidden" name="id" th:value="*{id}" th:if="*{id!=null}">
+                        <input type="text" name="name" placeholder="请输入新的类别" th:value="*{name}">
+                    </div>
+                </div>
+                <div class="ui error message">
+                </div>
+                <!--/*/
+                <div class="ui message nagative" th:if="${#fields.hasErrors('name')}">
+                    <i class="icon close"></i>
+                    <div class="header">校验失败：</div>
+                    <p th:errors="*{name}"></p>
+                </div>
+                /*/-->
+                <div class="ui container right aligned">
+                    <button  type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+                    <button class="ui button teal submit">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<!--网页底部-->
+    <div th:replace="~{/admin/_fragments::foot}"></div>
+
+<!--js放在此处加载速度最快-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script th:src="@{/lib/editormd/editormd.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script>
+
+
+    $("#mb_btn").click(function () {
+        $(".m-item").toggleClass("m-mobile-hide");
+    });
+    $(".ui.dropdown").dropdown({
+        on: "hover"
+    });
+    // 前端非空检验
+    $(".ui.form").form({
+        fields: {
+           name: {
+               identifier: 'name',
+               rules: [
+                   {
+                       type: 'empty',
+                       prompt: '请输入分类的名称！'
+                   }
+               ]
+           }
+        }
+    });
+
+</script>
+</body>
+</html>

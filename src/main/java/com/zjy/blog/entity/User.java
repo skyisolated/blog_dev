@@ -6,13 +6,14 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "t_table")
+@Table(name = "t_user")
 public class User {
     @Id
     @GeneratedValue
     private Long id;
     private String username;
     private String nickname;
+    private String password;
     private String email;
     private String avatar;
     private Integer type;
@@ -99,12 +100,21 @@ public class User {
         this.updateTime = updateTime;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", nickname='" + nickname + '\'' +
+                ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", avatar='" + avatar + '\'' +
                 ", type=" + type +

@@ -8,6 +8,8 @@ import java.util.List;
 @Entity
 @Table(name = "t_comment")
 public class Comment {
+    @Id
+    @GeneratedValue
     private Long id;
     private String nickname;
     private String email;

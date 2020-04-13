@@ -1,6 +1,5 @@
 package com.zjy.blog.entity;
 
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -27,11 +26,17 @@ public class Blog {
     private Date createTime;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime;
-
+    /**
+     * 反应实体类之间的一对多，多对多关系；
+     * 分为关系维护端和被维护端；
+     * 有mappedBy属性的一端为被维护段，一对多的情况下是many也就是many一端；
+     * 维护端可以更新外键，被维护段不可；
+     * 多对多情况下依据情况来定；
+     */
     @ManyToOne
     private Type type;
 
-    @ManyToMany(cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = CascadeType.PERSIST) //在创建博客时，如果有新创建的标签，一同写入数据库；
     private List<Tag> tags = new ArrayList<>();
 
     @ManyToOne
