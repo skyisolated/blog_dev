@@ -22,6 +22,7 @@ public class Blog {
     private boolean comments;
     private boolean publish;
     private boolean recommend;
+    private String description;
     @Temporal(TemporalType.TIMESTAMP)  //帮助util.Date格式化
     private Date createTime;
     @Temporal(TemporalType.TIMESTAMP)
@@ -41,7 +42,6 @@ public class Blog {
 
     @ManyToOne
     private User user;
-
     public List<Comment> getComms() {
         return comms;
     }
@@ -185,6 +185,14 @@ public class Blog {
         this.updateTime = updateTime;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
         return "Blog{" +
@@ -198,8 +206,14 @@ public class Blog {
                 ", share=" + share +
                 ", comments=" + comments +
                 ", publish=" + publish +
+                ", recommend=" + recommend +
+                ", description='" + description + '\'' +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", type=" + type +
+                ", tags=" + tags +
+                ", user=" + user +
+                ", comms=" + comms +
                 '}';
     }
 }

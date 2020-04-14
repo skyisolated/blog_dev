@@ -29,16 +29,16 @@
                         <input type="text" name="title" placeholder="标题">
                     </div>
 <!--                    一个下拉选项框-->
-                    <div class="field">
-                       <div class="ui selection dropdown">
-                           <input type="hidden" value="type" name="typeId" >
-                           <i class="icon dropdown"></i>
-                           <div class="default text">分类</div>
-                           <div class="menu">
-                               <div  th:each="type : ${types}" class="item" th:data-value="${type.id}" th:text="${type.name}">错误日志</div>
-                           </div>
-                       </div>
-                    </div>
+<!--                    <div class="field">-->
+<!--                       <div class="ui selection dropdown">-->
+<!--                           <input type="hidden" value="type" name="typeId" >-->
+<!--                           <i class="icon dropdown"></i>-->
+<!--                           <div class="default text">分类</div>-->
+<!--                           <div class="menu">-->
+<!--                               <div  th:each="type : ${types}" class="item" th:data-value="${type.id}" th:text="${type.name}">错误日志</div>-->
+<!--                           </div>-->
+<!--                       </div>-->
+<!--                    </div>-->
                     <div class="field">
                         <div class="ui checkbox">
                             <input type="checkbox" id="recommend" name="recommend">
@@ -58,6 +58,7 @@
                         <th>标题</th>
                         <th>类型</th>
                         <th>推荐</th>
+                        <th>状态</th>
                         <th>更新时间</th>
                         <th>操作</th>
                     </tr>
@@ -66,8 +67,9 @@
                     <tr th:each="blog : ${blogs}">
                         <td th:text="${blog.id}">1</td>
                         <td th:text="${blog.title}">刻意练习清单</td>
-                        <td th:text="${blog.type.id}">读后感</td>
+                        <td th:text="${blog.type.name}">读后感</td>
                         <td th:text="${blog.recommend}?'是':'否'">是</td>
+                        <td th:text="${blog.publish}?'发布':'草稿'">是</td>
                         <td th:text="${#dates.format(blog.updateTime, 'yyyy-MM-dd HH:mm')}">2020-04-07</td>
                         <td>
                             <a href="#" th:href="@{/admin/blogs/input/}+${blog.id}" class="ui basic button mini teal">编辑</a>
@@ -77,18 +79,22 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th colspan="6">
+                        <th colspan="7">
                             <div class="ui pagination menu mini">
                                 <a onclick="page(this)" th:attr="data-page=${blogs.number}-1" class="item" th:unless="${blogs.first}">上一页</a>
                                 <a onclick="page(this)" th:attr="data-page=${blogs.number}+1"class="item" th:unless="${blogs.last}">下一页</a>
                             </div>
-                            <a href="#" class="ui button basic teal right floated">新增</a>
+                            <a th:href="@{/admin/blogs/input}" class="ui button basic teal right floated">新增</a>
                         </th>
 
                     </tr>
                     </tfoot>
                 </table>
-
+                <div class="ui message success" th:if="${msg != null}">
+                    <i class="icon close"></i>
+                    <div class="header">提示：</div>
+                    <p th:text="${msg}"></p>
+                </div>
             </div>
         </div>
     </div>
@@ -109,17 +115,22 @@
         $("[name='page']").val($(obj).data("page"));
         loaddata();
     }
+
     $("#search-button").click(function () {
+        $("[name='page']").val(0);
         loaddata();
     });
     function loaddata() {
         $("#table-container").load(/*[[@{/admin/blogs/search}]]*/"/admin/blogs/search",{
-            title: $("[name='title']").val(),
-            typeId: $("[name='typeId']").val(),
-            recommend: $("[name='recommend']").prop("checked"),
-            page: $("[name='page']").val()
+            title : $("[name='title']").val(),
+           // typeId : $("[name='typeId']").val(),
+            recommend : $("[name='recommend']").prop('checked'),
+            page : $("[name='page']").val()
         });
     }
+    $(".message .close").on('click',function () {
+        $(this).closest(".message").transition("fade");
+    });
 </script>
 </body>
 </html>
